@@ -54,7 +54,8 @@ class Backend(QObject):
         self.setcurtimer.emit(cur_timer, imgList.getCurTimerColor())
 
     def windowsize(self):
-        self.setwindowsize.emit(512, 860)
+        global imgList
+        self.setwindowsize.emit(imgList.getWindowWidth(), imgList.getWindowHeight())
 
     def reload(self, mirror=False):
         global imgList
@@ -92,13 +93,6 @@ class Backend(QObject):
     def pause(self):
         global imgList
         imgList.pause()
-
-    @pyqtSlot()
-    def info(self):
-        global imgList
-        msgBox = QMessageBox()
-        msgBox.setText(imgList.getImagePath())
-        msgBox.exec()
 
     @pyqtSlot()
     def prev(self):

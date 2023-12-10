@@ -5,7 +5,7 @@ import QtQuick.Controls.Fusion
 
 ApplicationWindow {
 
-	property string curImagePath: "./images/background.png"
+	property string curImagePath: ""
 	property bool curImgMirror: false
 
 	property string timerValue: "00:00"

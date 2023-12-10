@@ -26,8 +26,17 @@ class ImageList:
         self.cur_timer = 0
         self.total_time_spent = 0
 
+        self.window_width = 0
+        self.window_height = 0
+
     def getImagePath(self):
         return self.cur_image_path
+
+    def getWindowWidth(self):
+        return self.window_width
+
+    def getWindowHeight(self):
+        return self.window_height
 
     def getIndexOfPrevImageInSameFolder(self):
 
@@ -138,6 +147,9 @@ class ImageList:
         print('{} images found'.format(len(self.img_list)))
 
         self.max_timer_value = args.timeout
+
+        self.window_width = args.width
+        self.window_height = args.height
 
     def append_img(self, img):
         self.img_list.append(img)
