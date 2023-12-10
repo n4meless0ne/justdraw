@@ -103,7 +103,7 @@ class Backend(QObject):
     @pyqtSlot()
     def prev(self):
         global imgList
-        imgList.getImagePath()
+        imgList.change(-1)
         self.reload()
 
     @pyqtSlot()
