@@ -3,7 +3,6 @@ import sys
 from PyQt6.QtQml import QQmlApplicationEngine
 from PyQt6.QtGui import QGuiApplication, QImage, QIcon
 from PyQt6.QtCore import QTimer, QObject, QUrl, pyqtSignal, pyqtSlot
-from PyQt6.QtWidgets import QMessageBox
 
 from images import ImageList
 
