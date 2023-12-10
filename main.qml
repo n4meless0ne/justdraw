@@ -1,15 +1,9 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-//import QtQuick.Controls.Imagine 2.15
-//import QtQuick.Controls.Material
 import QtQuick.Controls.Fusion
 
 ApplicationWindow {
-
-	//palette.highlight: "violet"
-	
-	//Imagine.path: "qrc:/themes/dark"
 
 	property string curImagePath: "./images/background.png"
 	property bool curImgMirror: false
@@ -51,25 +45,6 @@ ApplicationWindow {
 			window_height = h;
 		}
     }
-	
-	/*footer: ToolBar {
-        RowLayout {
-            anchors.fill: parent
-            ToolButton {
-                text: qsTr("<")
-                onClicked: stack.pop()
-            }
-            ToolButton {
-                text: qsTr("A")
-                onClicked: menu.open()
-            }
-        }
-    }
-	StackView {
-        id: stack
-        anchors.fill: parent
-    }*/
-	
 	
     Rectangle {
         anchors {
