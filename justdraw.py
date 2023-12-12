@@ -94,12 +94,6 @@ class Backend(QObject):
         imgList.pause()
 
     @pyqtSlot()
-    def prev(self):
-        global imgList
-        imgList.change(-1)
-        self.reload()
-
-    @pyqtSlot()
     def exclude_folder(self):
         global imgList
         imgList.excludeFolder()
