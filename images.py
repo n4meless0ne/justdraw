@@ -1,4 +1,5 @@
 import argparse
+import os
 import random
 import sys
 import tempfile
@@ -135,7 +136,7 @@ class ImageList:
 
         else:
             # use specified path or current directory to find all supported images
-            self.img_list = toImgList(self, findAllSupportedFiles(args.path if args.path else '.', image_extensions))
+            self.img_list = toImgList(self, findAllSupportedFiles(args.path if args.path else [os.getcwd()], image_extensions))
 
         if len(self.img_list) == 0:
             print('No supported images found')

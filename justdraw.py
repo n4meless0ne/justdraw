@@ -1,3 +1,4 @@
+import os
 import sys
 
 from PyQt6.QtQml import QQmlApplicationEngine
@@ -5,6 +6,9 @@ from PyQt6.QtGui import QGuiApplication, QImage, QIcon
 from PyQt6.QtCore import QTimer, QObject, QUrl, pyqtSignal, pyqtSlot
 
 from images import ImageList
+
+print(os.getcwd())
+app_dir = os.path.dirname(os.path.realpath(__file__))
 
 imgList = ImageList()
 imgList.load()
@@ -14,7 +18,7 @@ app.setWindowIcon(QIcon('./images/icon.png'))
 
 engine = QQmlApplicationEngine()
 engine.quit.connect(app.quit)
-engine.load('main.qml')
+engine.load(QUrl.fromLocalFile(os.path.join(app_dir, 'main.qml')).path())
 
 
 class Backend(QObject):
@@ -107,6 +111,7 @@ class Backend(QObject):
     def copy(self):
         global imgList
         app.clipboard().setImage(QImage(imgList.getImagePath()))
+
 
 # define our backend object, which we pass to QML
 backend = Backend()
