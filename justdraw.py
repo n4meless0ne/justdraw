@@ -1,9 +1,9 @@
 import os
 import sys
 
-from PyQt6.QtQml import QQmlApplicationEngine
-from PyQt6.QtGui import QGuiApplication, QImage, QIcon
-from PyQt6.QtCore import QTimer, QObject, QUrl, pyqtSignal, pyqtSlot
+from PyQt5.QtQml import QQmlApplicationEngine
+from PyQt5.QtGui import QGuiApplication, QImage, QIcon
+from PyQt5.QtCore import QTimer, QObject, QUrl, pyqtSignal, pyqtSlot
 
 from images import ImageList
 
